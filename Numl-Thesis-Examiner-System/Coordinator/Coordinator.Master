@@ -1,0 +1,174 @@
+﻿<%@ Master Language="C#"  CodeBehind="Coordinator.Master.cs" Inherits="Coordinator.Numl_Thesis_Examiner_System.master"%>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+input[type=submit] {
+    height:auto;
+}
+input:invalid,textarea:invalid {
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535
+}
+input:not([type=submit]):valid,textarea:valid {
+    box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+}
+    </style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Coordinator Panel</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+ <script type="module" src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.esm.js"></script>
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons/ionicons.js"></script>
+    <!-- iCheck -->
+  <link rel="stylesheet" href="../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="../plugins/bootstrap-datepicker-1.9.0-dist/css/bootstrap-datepicker3.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+  <!-- JQuery Cookie Used For Passing Values-->
+  <script type="text/javascript" src="../scripts/jquery.cookie.js"></script>
+    <style>
+        .mdb-autocomplete-wrap{position:absolute;right:0;left:0;z-index:100;max-height:210px;padding-left:0;overflow-y:auto;list-style-type:none;background:#fff;-webkit-box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);}
+        .mdb-autocomplete-wrap li{padding:12px 15px;font-size:.875rem;cursor:pointer}
+        .mdb-autocomplete-wrap li:hover{background:#eee}
+        .mdb-autocomplete-wrap li.selected{background-color:#eee}
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   .form-inline .md-form .form-control.mdb-autocomplete{width:15rem}
+    </style>
+</head>
+<body class="hold-transition sidebar-mini layout-fixed sidebar-collapse">
+    <form runat="server">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark navbar-lightblue">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+      
+    </ul>
+       <ul class="navbar-nav nav-pills nav-sidebar ml-auto">
+      <li class="nav-item">
+          <asp:LinkButton ID="LinkButton1" runat="server" CssClass="text-white" OnClick="LinkButton1_Click">
+             <i class="fas fa-sign-out-alt"></i>LOGOUT
+                </asp:LinkButton>
+          </li>
+    </ul>
+ 
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="../dist/img/Logo.png" alt="Numl Logo" class="brand-image img-circle elevation-3">
+      <span class="brand-text font-weight-light text-md">Thesis Examiner System</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="info">
+          <asp:Label ID="name" href="#" class="d-block" runat="server" ForeColor="White" Font-Bold="True">Name Here</asp:Label><br />
+           <div><span class="font-weight-bold" style="color:white">User ID:</span><asp:Label ID="userid" runat="server" ForeColor="White" Text="Label"></asp:Label></div> 
+            <br />
+            <a href="editprofile.aspx" class="nav-link">
+                            <i class="fas fa-user-edit text-white"></i>
+                Edit Profile
+            </a> 
+            <a href="changepassword.aspx" class="nav-link">
+                <i class="fas fa-user-cog text-white"></i>
+                Change Password
+            </a>      
+      </div>
+          </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item">
+            <a href="dashboard.aspx" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+              </p>
+            </a>
+          </li>
+          
+          <li class="nav-item">
+            <a href="addcase.aspx" class="nav-link">
+            <i class="nav-icon fas fa-edit"></i>
+              <p>
+               Add Case
+              </p>
+            </a>
+          </li>   
+             <li class="nav-item">
+            <a href="viewpapers.aspx" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+              <p>
+               View/Edit Cases
+              </p>
+            </a>
+          </li>         
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+    
+  <!-- Content Wrapper. Contains page content -->
+  <div class="main-content">
+    <asp:ContentPlaceHolder ID="forms" runat="server">
+    </asp:ContentPlaceHolder>
+</div>
+    </div>
+    </form>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer text-center">
+      <strong>Copyright &copy;<span id="copyright">
+        <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script>
+    </span><a href="https://www.numl.edu.pk/offices/ITCON">ITCON</a>.</strong>
+    All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+<!-- jQuery UI 1.11.4 -->
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+    $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- overlayScrollbars -->
+<script src="../plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.js"></script>
+    <!-- DataTables -->
+<script src="../plugins/datatables/jquery.dataTables.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+         <!-- page script -->
+</body>
+</html>
